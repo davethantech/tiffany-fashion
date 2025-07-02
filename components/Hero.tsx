@@ -7,11 +7,16 @@ import "swiper/css/effect-fade";
 import { Link } from "react-router-dom";
 import { COLORS } from "../constants";
 
-import consultancyImage from "../assets/images/consult.jpg";
-import loanImage from "../assets/images/loan.jpg";
+import loanImage from "../assets/images/business.jpeg";
 import businessImage from "../assets/images/business.jpg";
 import investmentImage from "../assets/images/fund.jpg";
 import debtImage from "../assets/images/debt.jpg";
+
+import consultancyImage from "../assets/images/consult.jpg";
+
+
+
+
 
 const slides = [
 	{

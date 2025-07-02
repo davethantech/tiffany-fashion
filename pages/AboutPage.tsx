@@ -4,8 +4,9 @@ import SectionContainer from '../components/SectionContainer';
 import { COMPANY_INFO, COLORS } from '../constants';
 import type { CoreValue } from '../types';
 import { CheckCircleIcon, LightBulbIcon, UsersIcon, ScaleIcon } from '../components/IconComponents';
-import investmentImage from "../assets/images/fund.jpg";
+import investmentImage from "../assets/images/aboutBg.jpg";
 import consultancyImage from "../assets/images/consult.jpg";
+import aboutImage from "../assets/images/about.jpg";
 
 const coreValuesData: CoreValue[] = [
   { 
@@ -44,7 +45,7 @@ const AboutPage: React.FC = () => {
 				<div className='grid md:grid-cols-2 gap-10 items-center'>
 					<div>
 						<h2
-							className={`text-3xl font-bold text-${COLORS.brandBlue} mb-4`}
+							className={`text-3xl font-bold text-${COLORS.brandDark} mb-4`}
 						>
 							Our Company
 						</h2>
@@ -59,7 +60,7 @@ const AboutPage: React.FC = () => {
 							agricultural enterprises.
 						</p>
 						<img
-							src={investmentImage}
+							src={aboutImage}
 							alt='Our Office'
 							className='rounded-lg shadow-lg w-full mt-6'
 						/>

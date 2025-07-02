@@ -3,8 +3,8 @@ import PageHeader from "../components/PageHeader";
 import SectionContainer from "../components/SectionContainer";
 import { COLORS } from "../constants";
 import type { WhyChooseUsPoint } from "../types";
-import consultancyImage from "../assets/images/consult.jpg";
 import investmentImage from "../assets/images/fund.jpg";
+import aboutImage from "../assets/images/aboutBg.jpg";
 import {
 	CheckCircleIcon,
 	CogIcon,
@@ -53,7 +53,7 @@ const WhyChooseUsPage: React.FC = () => {
 				title='Why Choose Cloverdale Finance?'
 				subtitle='Selecting a financial partner is a critical decision. Discover why Cloverdale is the partner of choice for your financial objectives.'
 				imageSeed='trust-handshake'
-				image={consultancyImage}
+				image={aboutImage}
 			/>
 
 			<SectionContainer
@@ -61,7 +61,7 @@ const WhyChooseUsPage: React.FC = () => {
 			>
 				<div className='max-w-3xl mx-auto text-center mb-12 px-4 sm:px-6 lg:px-8'>
 					<h2
-						className={`text-3xl font-bold text-${COLORS.brandBlue} mb-6`}
+						className={`text-3xl font-bold text-${COLORS.brandDark} mb-6`}
 					>
 						Why Clients Choose Us
 					</h2>
@@ -137,7 +137,7 @@ const WhyChooseUsPage: React.FC = () => {
 					</div>
 					<div className='prose prose-slate max-w-none'>
 						<h2
-							className={`text-3xl font-bold text-${COLORS.brandBlue} mb-4`}
+							className={`text-3xl font-bold text-${COLORS.brandDark} mb-4`}
 						>
 							Our Commitment to You
 						</h2>

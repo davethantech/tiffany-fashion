@@ -4,9 +4,9 @@ import SectionContainer from "../components/SectionContainer";
 import { COLORS } from "../constants";
 import { boardMembersData, leadershipData } from "@/components/LeadershipData";
 import TeamCard from "../components/TeamCard";
-import consultancyImage from "../assets/images/consult.jpg";
+import aboutImage from "../assets/images/aboutBg.jpg";
 
-const ceo = leadershipData[0];
+// const ceo = leadershipData[0];
 const otherLeaders = leadershipData.slice(1);
 const boardMembers = boardMembersData;
 
@@ -25,11 +25,11 @@ const LeadershipPage: React.FC = () => {
 				title='Visionary Leadership'
 				subtitle={`Meet our team`}
 				imageSeed='leadership-team'
-				image={consultancyImage}
+				image={aboutImage}
 			/>
 
 			{/* CEO Section */}
-			<SectionContainer className={`bg-${COLORS.bgWhite}`}>
+			{/* <SectionContainer className={`bg-${COLORS.bgWhite}`}>
 				<div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='prose prose-slate max-w-none lg:prose-lg'>
 						<h2
@@ -65,12 +65,12 @@ const LeadershipPage: React.FC = () => {
 						</div>
 					</div>
 				</div>
-			</SectionContainer>
+			</SectionContainer> */}
 
 			{/* Management Team Section */}
 			<SectionContainer className={`bg-${COLORS.bgLight}`}>
 				<h2
-					className={`text-3xl font-bold text-${COLORS.brandBlue} mb-8 text-center`}
+					className={`text-3xl font-bold text-${COLORS.brandDark} mb-8 text-center`}
 				>
 					Board Members
 				</h2>
@@ -90,7 +90,7 @@ const LeadershipPage: React.FC = () => {
 			{/* Management Team Section */}
 			<SectionContainer className={`bg-${COLORS.bgLight}`}>
 				<h2
-					className={`text-3xl font-bold text-${COLORS.brandBlue} mb-8 text-center`}
+					className={`text-3xl font-bold text-${COLORS.brandDark} mb-8 text-center`}
 				>
 					Our Team
 				</h2>
@@ -110,7 +110,7 @@ const LeadershipPage: React.FC = () => {
 			<SectionContainer className={`bg-${COLORS.bgLight}`}>
 				<div className='text-center max-w-3xl mx-auto'>
 					<h2
-						className={`text-2xl md:text-3xl font-bold text-${COLORS.brandBlue} mb-4`}
+						className={`text-2xl md:text-3xl font-bold text-${COLORS.brandDark} mb-4`}
 					>
 						Our Commitment to Excellence
 					</h2>

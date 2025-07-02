@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
 			className={`bg-${COLORS.footerBg} text-gray-300 pt-12 pb-8`}
 		>
 			<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8'>
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8'>
 					{/* Column 1: Logo and About */}
 					{/* Column 1: Logo and About */}
 					<div>
@@ -51,12 +51,12 @@ const Footer: React.FC = () => {
 					</div>
 
 					{/* Column 3: Contact Info */}
-					<div>
+					<div className='md:col-span-2 lg:col-span-1'>
 						<h4 className='text-lg font-semibold text-white mb-4'>
 							Contact Us
 						</h4>
 						<ul className='space-y-3 text-sm'>
-							<li className='flex items-start'>
+							<li className='flex items-center'>
 								<LocationMarkerIcon
 									className={`w-5 h-5 mr-3 mt-1 text-${COLORS.brandAccentGreen} flex-shrink-0`}
 								/>
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
 					</div>
 
 					{/* Column 4: Newsletter (Placeholder) */}
-					<div>
+					{/* <div>
 						<h4 className='text-lg font-semibold text-white mb-4'>
 							Stay Updated
 						</h4>
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
 								Subscribe
 							</button>
 						</form>
-					</div>
+					</div> */}
 				</div>
 
 				<div className='border-t border-gray-700 pt-8 mt-8 text-center text-sm text-gray-400'>

@@ -4,30 +4,71 @@ import PageHeader from '../components/PageHeader';
 import SectionContainer from '../components/SectionContainer';
 import { COMPANY_INFO, COLORS } from '../constants';
 import { MailIcon, PhoneIcon, LocationMarkerIcon } from '../components/IconComponents';
-import debtImage from "../assets/images/debt.jpg";
-// 
+import emailjs from "emailjs-com";
+import aboutImage from "../assets/images/aboutBg.jpg";
+
+
+
+
 const ContactPage: React.FC = () => {
+	
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (
+		e: React.ChangeEvent<
+			HTMLInputElement | HTMLTextAreaElement
+		>
+	) => {
+		setFormData({
+			...formData,
+			[e.target.name]: e.target.value,
+		});
+	};
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Basic validation
-    if(formData.name && formData.email && formData.subject && formData.message) {
-        console.log('Form data submitted:', formData);
-        // Here you would typically send the data to a backend
-        setIsSubmitted(true);
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
-        // Hide success message after a few seconds
-        setTimeout(() => setIsSubmitted(false), 5000);
-    } else {
-        alert("Please fill in all fields.");
-    }
-  };
+	const handleSubmit = (
+		e: React.FormEvent<HTMLFormElement>
+	) => {
+		e.preventDefault();
+
+		if (
+			formData.name &&
+			formData.email &&
+			formData.subject &&
+			formData.message
+		) {
+			emailjs
+				.send(
+					"service_ih3p15d",
+					"template_pqp1rqq",
+					{
+						from_name: formData.name,
+						from_email: formData.email,
+						subject: formData.subject,
+						message: formData.message,
+					},
+					"SyXgGYvWFsPoJY212"
+				)
+				.then(() => {
+					setIsSubmitted(true);
+					setFormData({
+						name: "",
+						email: "",
+						subject: "",
+						message: "",
+					});
+					setTimeout(() => setIsSubmitted(false), 5000);
+				})
+				.catch((error) => {
+					alert(
+						"Failed to send message. Please try again."
+					);
+					console.error("EmailJS error:", error);
+				});
+		} else {
+			alert("Please fill in all fields.");
+		}
+	};
 
   return (
 		<>
@@ -35,7 +76,7 @@ const ContactPage: React.FC = () => {
 				title='Contact Us'
 				subtitle="We're here to help and answer any question you might have. We look forward to hearing from you."
 				imageSeed='contact-us-banner'
-				image={debtImage}
+				image={aboutImage}
 			/>
 			<SectionContainer className={`bg-${COLORS.bgWhite}`}>
 				<div className='grid md:grid-cols-2 gap-10 md:gap-16'>
@@ -45,7 +86,7 @@ const ContactPage: React.FC = () => {
 					>
 						<div>
 							<h3
-								className={`text-2xl font-semibold text-${COLORS.brandBlue} mb-4`}
+								className={`text-2xl font-semibold text-${COLORS.brandDark} mb-4`}
 							>
 								Get in Touch
 							</h3>
@@ -145,7 +186,7 @@ const ContactPage: React.FC = () => {
 						className={`p-8 bg-${COLORS.bgLight} rounded-lg shadow-lg`}
 					>
 						<h3
-							className={`text-2xl font-semibold text-${COLORS.brandBlue} mb-6`}
+							className={`text-2xl font-semibold text-${COLORS.brandDark} mb-6`}
 						>
 							Send Us a Message
 						</h3>
@@ -248,7 +289,7 @@ const ContactPage: React.FC = () => {
 				{/* Full-width Map Section (React JSX) */}
 				<div className={`bg-${COLORS.bgWhite} pt-12 pb-12`}>
 					<h2
-						className={`text-3xl font-bold text-${COLORS.brandBlue} text-center mb-8`}
+						className={`text-3xl font-bold text-${COLORS.brandDark} text-center mb-8`}
 					>
 						Find Us On The Map
 					</h2>

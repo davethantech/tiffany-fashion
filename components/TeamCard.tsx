@@ -33,7 +33,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
 				className='rounded-full w-24 h-24 mb-3 object-cover border-4 border-white shadow'
 			/> */}
 			<h3
-				className={`text-lg font-semibold text-${COLORS.brandBlue} mb-1`}
+				className={`text-lg font-semibold text-${COLORS.brandDark} mb-1`}
 			>
 				{member.name}
 			</h3>

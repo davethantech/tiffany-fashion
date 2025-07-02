@@ -6,11 +6,12 @@ import type { Service, ServiceDetail } from '../types';
 import { COLORS } from '../constants';
 import { CurrencyDollarIcon, BriefcaseIcon, CogIcon, ChartBarIcon, UsersIcon } from '../components/IconComponents';
 
-import consultancyImage from "../assets/images/consult.jpg";
-import loanImage from "../assets/images/loan.jpg";
+import loanImage from "../assets/images/business.jpeg";
 import businessImage from "../assets/images/business.jpg";
 import investmentImage from "../assets/images/fund.jpg";
 import debtImage from "../assets/images/debt.jpg";
+import consultancyImage from "../assets/images/consult.jpg";
+import aboutImage from "../assets/images/aboutBg.jpg";
 
 const servicesData: Service[] = [
 	{
@@ -19,7 +20,7 @@ const servicesData: Service[] = [
 		title: "Consumer Loans",
 		description:
 			"Cloverdale offers credit facilities that allow clients leverage their cashflow for big-ticket purchases such as electronics, gadgets and equipment.",
-		image: consultancyImage,
+		image: loanImage,
 		details: [
 			{
 				title: "Fixed Term Loans",
@@ -49,7 +50,7 @@ const servicesData: Service[] = [
 		title: "Business Finance Solutions",
 		description:
 			"We offer a range of solutions for MSMEs to manage working capital needs.",
-		image: loanImage,
+		image: businessImage,
 		details: [
 			{
 				title: "Asset Finance",
@@ -84,7 +85,7 @@ const servicesData: Service[] = [
 		title: "Debt Services",
 		description:
 			"We offer value-added credit related solutions to businesses to manage debt exposures.",
-		image: businessImage,
+		image: debtImage,
 		details: [
 			{
 				title: "Debt Securitization",
@@ -134,7 +135,7 @@ const servicesData: Service[] = [
 		title: "Financial Consultancy",
 		description:
 			"Our team offers financial consultancy to MSMEs to optimize cashflow and finance needs.",
-		image: debtImage,
+		image: consultancyImage,
 		details: [
 			{
 				title: "MSME Consultancy",
@@ -171,7 +172,7 @@ const ServicesPage: React.FC = () => {
 				title='Our Services'
 				subtitle='Cloverdale Finance Company Limited offers a range of Saving, Investment and Credit solutions to aid individuals, households and businesses leverage cashflows and optimize utilization of funds in achieving set objectives.'
 				imageSeed='services-banner'
-				image={investmentImage}
+				image={aboutImage}
 			/>
 
 			{servicesData.map(
@@ -192,7 +193,7 @@ const ServicesPage: React.FC = () => {
 								<img
 									src={serviceCategory.image}
 									alt={serviceCategory.title}
-									className='w-full max-h-96 object-cover rounded-lg shadow-xl mx-auto'
+									className='w-full max-h-98 object-cover rounded-lg shadow-xl mx-auto'
 								/>
 							</div>
 						)}

@@ -14,7 +14,8 @@ import {
 	CurrencyDollarIcon,
 	ChartBarIcon,
 } from "../components/IconComponents";
-import investmentImage from "../assets/images/fund.jpg";
+import aboutImage from "../assets/images/about.jpg";
+import africaImage from "../assets/images/africa.jpg";
 
 const coreValuesData: CoreValue[] = [
 	{
@@ -79,7 +80,7 @@ const HomePage: React.FC = () => {
 				<div className='grid md:grid-cols-2 gap-12 items-center'>
 					<div>
 						<h2
-							className={`text-3xl font-bold text-${COLORS.brandBlue} mb-4`}
+							className={`text-3xl font-bold text-${COLORS.brandDark} mb-4`}
 						>
 							About Cloverdale Finance
 						</h2>
@@ -110,7 +111,7 @@ const HomePage: React.FC = () => {
 					</div>
 					<div>
 						<img
-							src={investmentImage}
+							src={aboutImage}
 							alt='About Cloverdale Finance'
 							className='rounded-lg shadow-xl w-full'
 						/>
@@ -174,8 +175,7 @@ const HomePage: React.FC = () => {
 				<div
 					className='relative bg-cover bg-center py-20 rounded-lg shadow-2xl'
 					style={{
-						backgroundImage:
-							"url(https://picsum.photos/seed/cta-banner/1200/400)",
+						backgroundImage: `url(${africaImage})`,
 					}}
 				>
 					<div
