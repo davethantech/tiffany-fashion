@@ -73,29 +73,22 @@ const Footer: React.FC = () => {
 									{COMPANY_INFO.contactEmail}
 								</a>
 							</li>
-							{COMPANY_INFO.phoneNumbers.slice(0, 1).map(
-								(
-									phone // Show first phone
-								) => (
-									<li
-										key={phone}
-										className='flex items-center'
+							{COMPANY_INFO.phoneNumbers.map((phone) => (
+								<li
+									key={phone}
+									className='flex items-center'
+								>
+									<PhoneIcon
+										className={`w-5 h-5 mr-3 text-${COLORS.brandAccentGreen} flex-shrink-0`}
+									/>
+									<a
+										href={`tel:${phone.replace(/\s/g, "")}`}
+										className={`hover:text-${COLORS.brandAccentGreen} transition-colors duration-150`}
 									>
-										<PhoneIcon
-											className={`w-5 h-5 mr-3 text-${COLORS.brandAccentGreen} flex-shrink-0`}
-										/>
-										<a
-											href={`tel:${phone.replace(
-												/\s/g,
-												""
-											)}`}
-											className={`hover:text-${COLORS.brandAccentGreen} transition-colors duration-150`}
-										>
-											{phone}
-										</a>
-									</li>
-								)
-							)}
+										{phone}
+									</a>
+								</li>
+							))}
 						</ul>
 					</div>
 

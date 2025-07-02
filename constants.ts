@@ -27,10 +27,9 @@ export const COMPANY_INFO = {
 	shortName: "Cloverdale Finance",
 	tagline: "Your Surest Partner for a Wealthier Future",
 	ceoName: "Mr. Abubakar Bello",
-	email: "abello@cloverdalefinance.com",
+	// email: "abello@cloverdalefinance.com",
 	contactEmail: "info@cloverdalefinance.com",
 	phoneNumbers: [
-		"+234 803 404 5522",
 		"+234 906 202 5678",
 		"+234 916 201 5678",
 	],

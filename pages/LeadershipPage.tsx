@@ -2,17 +2,22 @@ import React, { useState } from "react";
 import PageHeader from "../components/PageHeader";
 import SectionContainer from "../components/SectionContainer";
 import { COLORS } from "../constants";
-import { leadershipData } from "@/components/LeadershipData";
+import { boardMembersData, leadershipData } from "@/components/LeadershipData";
 import TeamCard from "../components/TeamCard";
 import consultancyImage from "../assets/images/consult.jpg";
 
 const ceo = leadershipData[0];
 const otherLeaders = leadershipData.slice(1);
+const boardMembers = boardMembersData;
 
 const LeadershipPage: React.FC = () => {
+	// const [activeIndex, setActiveIndex] = useState<
+	// 	number | null
+	// >(null);
 	const [activeIndex, setActiveIndex] = useState<
-		number | null
+		string | null
 	>(null);
+
 
 	return (
 		<>
@@ -67,14 +72,34 @@ const LeadershipPage: React.FC = () => {
 				<h2
 					className={`text-3xl font-bold text-${COLORS.brandBlue} mb-8 text-center`}
 				>
+					Board Members
+				</h2>
+				<div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start'>
+					{boardMembers.map((member, index) => (
+						<TeamCard
+							key={member.name}
+							member={member}
+							index={`board-${index}`}
+							activeIndex={activeIndex}
+							setActiveIndex={setActiveIndex}
+						/>
+					))}
+				</div>
+			</SectionContainer>
+
+			{/* Management Team Section */}
+			<SectionContainer className={`bg-${COLORS.bgLight}`}>
+				<h2
+					className={`text-3xl font-bold text-${COLORS.brandBlue} mb-8 text-center`}
+				>
 					Our Team
 				</h2>
-				<div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch'>
+				<div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start'>
 					{otherLeaders.map((member, index) => (
 						<TeamCard
 							key={member.name}
 							member={member}
-							index={index}
+							index={`team-${index}`}
 							activeIndex={activeIndex}
 							setActiveIndex={setActiveIndex}
 						/>

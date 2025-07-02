@@ -4,9 +4,9 @@ import type { TeamMember } from "../types";
 
 interface TeamCardProps {
 	member: TeamMember;
-	index: number;
-	activeIndex: number | null;
-	setActiveIndex: (index: number | null) => void;
+	index: string;
+	activeIndex: string | null;
+	setActiveIndex: (index: string | null) => void;
 }
 
 const TeamCard: React.FC<TeamCardProps> = ({
@@ -27,11 +27,11 @@ const TeamCard: React.FC<TeamCardProps> = ({
 		<div
 			className={`bg-${COLORS.bgWhite} rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center p-4`}
 		>
-			<img
+			{/* <img
 				src={member.image}
 				alt={member.name}
 				className='rounded-full w-24 h-24 mb-3 object-cover border-4 border-white shadow'
-			/>
+			/> */}
 			<h3
 				className={`text-lg font-semibold text-${COLORS.brandBlue} mb-1`}
 			>

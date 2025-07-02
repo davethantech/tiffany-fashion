@@ -96,17 +96,6 @@ const ContactPage: React.FC = () => {
 									>
 										For general inquiries.
 									</p>
-									<a
-										href={`mailto:${COMPANY_INFO.email}`}
-										className={`text-${COLORS.brandBlue} hover:text-${COLORS.brandGreen} transition-colors`}
-									>
-										{COMPANY_INFO.email}
-									</a>
-									<p
-										className={`text-xs text-${COLORS.textSecondary}`}
-									>
-										MD/CEO: {COMPANY_INFO.ceoName}
-									</p>
 								</div>
 							</div>
 							<div className='flex items-start'>

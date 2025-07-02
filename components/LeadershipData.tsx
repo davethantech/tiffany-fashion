@@ -70,3 +70,41 @@ export const leadershipData: TeamMember[] = [
 		],
 	},
 ];
+
+export const boardMembersData: TeamMember[] = [
+	{
+		name: "ARE AZEEZ MARTINS (MR.)",
+		role: "Board Member",
+		image: micheal,
+		bio: [
+			"Ekenechukwu Njeze is a strategic and solutions-driven professional with interests that span innovative technology, real estate and sustainable development. With a background in Computer Science and Business from the prestigious University College Dublin (Ireland), he brings with him a unique mix of expertise and technical acumen.",
+			"Ekenechukwu’s track record speaks for itself, working in different sectors including pensions, ICT and real estate at establishments such Veritas Glanvills Pensions, Brugge Investments Ltd. He is well experienced and has also developed a solid foundation in business development and technical advisory given the different sectors he has worked in over the years. He is a maestro in bridging operational needs with strategic outcomes.",
+			"Ekenechukwu’s ability to deliver high-impact projects, drive the adoption of digital tools, and close complex deals makes him highly valuable in any business environment.",
+		],
+	},
+	{
+		name: "Ekenechukwu Njeze",
+		role: "Board Member",
+		image: opara,
+		bio: [
+			"Winifred is a highly motivated and dedicated individual with strong communication and interpersonal skills.",
+			"She is a graduate of Financial Management Technology from the Federal University of Technology, Owerri, and has received additional training in Human Resources and Health, Safety and Environment (HSE).",
+			"With over 5 years of professional experience, Winifred has worked as a Liaison Officer and Administrative Officer in a reputable corporate organization, gaining valuable skills that enable her to strategically align with organizational goals.",
+			"Currently serving as a Marketing Executive at Cloverdale Finance Company Ltd, she brings energy, strategic thinking, and teamwork to the company's marketing efforts.",
+			"Winifred is a valuable team member committed to driving Cloverdale to greater heights.",
+		],
+	},
+
+	{
+		name: "Murtala Olanrewaju Abdurrazaq",
+		role: "Board Member",
+		image: kotun,
+		bio: [
+			"Murtala Olanrewaju Abdurrazaq is a seasoned financial and economic expert with over two decades of experience spanning banking, public finance, economic policy, and strategic business development. His diverse career has seen him excel in leadership roles across the banking sector, government agencies, and private enterprises, where he has consistently driven growth, policy innovation, and financial excellence.",
+			"As a board member, Murtala brings a wealth of expertise in financial management, regulatory compliance, risk assessment, and strategic decision-making. His strong background in banking operations, economic policy analysis, and fiscal responsibility uniquely positions him to contribute to the company’s growth and governance.",
+			"He has held key positions within the Kaduna State Government, including Special Assistant roles in the Office of Economic Adviser, Ministry of Agriculture, the Ministry of Finance, and the Fiscal Responsibility Commission. In these roles, he played a crucial part in policy formulation, financial strategy development, and public-sector reforms, enhancing economic efficiency and accountability. His tenure at Zenith Bank Plc as Banking Operations Manager further solidified his expertise in financial operations, risk management, and revenue generation.",
+			"Murtala holds a B.Sc. in Business Administration from Bayero University, Kano, an MBA in International Business from Staffordshire University, UK, and an International Certificate in Banking Risk & Regulation (ICBRR) from the Global Association of Risk Professionals, USA. He has also completed specialized courses in Sustainable Development and Political Economy from the University of Aberdeen, Universiteit Leiden, and the University of Geneva.",
+			"A strategic thinker and visionary leader, Murtala is committed to fostering financial growth, institutional resilience, and sustainable economic policies. His extensive experience in public and private sector finance makes him an invaluable asset to the board.",
+		],
+	},
+];
