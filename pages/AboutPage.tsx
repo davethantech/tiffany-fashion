@@ -8,6 +8,7 @@ import investmentImage from "../assets/images/aboutBg.jpg";
 import consultancyImage from "../assets/images/consult.jpg";
 import aboutImage from "../assets/images/about.jpg";
 
+
 const coreValuesData: CoreValue[] = [
   { 
     icon: <CheckCircleIcon className={`w-8 h-8 text-${COLORS.brandGreen}`} />, 

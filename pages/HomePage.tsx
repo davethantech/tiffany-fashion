@@ -16,6 +16,7 @@ import {
 } from "../components/IconComponents";
 import aboutImage from "../assets/images/about.jpg";
 import africaImage from "../assets/images/africa.jpg";
+import moneyImage from "../assets/images/money.png";
 
 const coreValuesData: CoreValue[] = [
 	{
@@ -111,7 +112,7 @@ const HomePage: React.FC = () => {
 					</div>
 					<div>
 						<img
-							src={aboutImage}
+							src={moneyImage}
 							alt='About Cloverdale Finance'
 							className='rounded-lg shadow-xl w-full'
 						/>

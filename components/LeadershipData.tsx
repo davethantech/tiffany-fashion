@@ -13,10 +13,10 @@ export const leadershipData: TeamMember[] = [
 		role: "MD/CEO",
 		image: ceoImage,
 		bio: [
-			"Under the pioneering leadership of the MD/CEO, Mr. Abubakar Bello, Cloverdale Finance Company Limited is positioned to support under-served markets with innovative solutions structured with the unique needs of the client in mind — underpinned by world-class risk management and regulatory compliance.",
-			"Mr. Abubakar Bello is a strategic finance executive specializing in Financial Management, Risk Assessment, and Policy Formulation with over 19 years of experience in Banking and Financial Services. He spent 14 years at Zenith Bank, where he held key leadership roles and gained extensive expertise in commercial banking, credit analysis, and operational efficiency.",
-			"He also served as Managing Director/CEO of Lighthouse Finance Company Limited for 3.5 years, leading the company’s growth through strategic planning, financial structuring, and regulatory compliance.",
-			"Mr. Abubakar Bello is a chartered accountant with a Bachelor's degree and an MBA. He has a strong track record in developing and implementing financial policies, corporate governance frameworks, and business strategies that drive growth and sustainability.",
+			"Abubakar Bello is a highly accomplished finance executive with over 19 years of extensive experience in banking, financial services and strategic leadership. He has built a distinguished career specializing in financial management, risk assessment, corporate governance, and policy formulation.",
+			"His career includes a significant 15-year tenure at Zenith Bank, where he held several leadership positions and developed across-the-board expertise in commercial banking, credit analysis, financial operations, and organizational efficiency. Following his success at Zenith Bank, Abubakar served as the Managing Director of Lighthouse Finance Company Limited for 3.5 years. Under his leadership, Lighthouse Finance achieved significant targets in operational performance and stakeholder value creation. In this capacity, he contributed to the company's expansion by implementing strategic planning, innovative financial structuring, and diligent regulatory compliance.",
+			"A Chartered Accountant, Abubakar Bello holds a Bachelor’s degree and an MBA in Finance and Investment from Ahmadu Bello University Zaria. His strong academic background complements a proven track record in developing and implementing financial policies, establishing corporate governance frameworks, and executing business strategies that consistently drive sustainable growth and organizational resilience.",
+			"With deep expertise in financial analysis, investment strategies, and operational risk management, Abubakar has a history of successfully leading high-performing teams, spearheading transformative initiatives and contributing to strengthening financial systems. He is passionate about fostering financial stability and innovation, which he achieves through sound policy formulation, rigorous regulatory compliance, and strategic leadership.",
 		],
 	},
 	{
@@ -73,13 +73,26 @@ export const leadershipData: TeamMember[] = [
 
 export const boardMembersData: TeamMember[] = [
 	{
-		name: "ARE AZEEZ MARTINS (MR.)",
+		name: "Dr. Igiekhumeh Nana-Aisha",
 		role: "Board Member",
 		image: micheal,
 		bio: [
-			"Ekenechukwu Njeze is a strategic and solutions-driven professional with interests that span innovative technology, real estate and sustainable development. With a background in Computer Science and Business from the prestigious University College Dublin (Ireland), he brings with him a unique mix of expertise and technical acumen.",
-			"Ekenechukwu’s track record speaks for itself, working in different sectors including pensions, ICT and real estate at establishments such Veritas Glanvills Pensions, Brugge Investments Ltd. He is well experienced and has also developed a solid foundation in business development and technical advisory given the different sectors he has worked in over the years. He is a maestro in bridging operational needs with strategic outcomes.",
-			"Ekenechukwu’s ability to deliver high-impact projects, drive the adoption of digital tools, and close complex deals makes him highly valuable in any business environment.",
+			"Dr. Igiekhumeh Nana-Aisha is a dedicated and results-driven medical professional with a strong foundation in medicine and extensive experience in various clinical settings. She is passionate about delivering exceptional patient care and advocating for positive societal change.",
+			"Licensed to practice medicine in Nigeria and the United Kingdom, Dr. Igiekhumeh brings a wealth of experience and expertise to her work. Her skills include:Patient diagnosis and management, Obstetrics ultrasound scan,  Emergency care and first aid, Team management and coordination, Strong communication and interpersonal skills.",
+			"With a Doctor of Medicine degree from Danylo Halytsky Lviv National Medical University, Ukraine, Dr. Igiekhumeh has contributed immensely in service to several reputable hospitals, including Santa Maria Hospital and Abuja Clinics Limited. Beyond her medical pursuits, Dr. Igiekhumeh is passionate about finance and investments, bringing a very unique perspective to our stragegic initiatives.",
+			"In her free time, she engages in baking, reading, photography, and sports."
+		],
+	},
+	{
+		name: "Are Azeez Martins (MR.)",
+		role: "Board Member",
+		image: micheal,
+		bio: [
+			"Mr. Azeez Are began his career over 15 years ago with Capita Financial Institution, Darlington, UK as a Financial Data Entry and Benefits Appraisal Executive. He has steadily established himself as a financial professional in Investment Banking that cut across Asset Management, Reconciliation, Securities Trading (Broker) and Investment Advisory, portfolio management, corporate finance, trade execution and structured finance at Nigerian Stockbrokers Ltd and TAK Asset Management Ltd.",
+			"He is currently the MD/CEO of Martaz Empire Ltd, also Chair Hartford Upward Empire Ltd and a consultant with Alpha 10 Fund Management Ltd.",
+			"Azeez Are obtained his first degree from University of Lagos where he bagged a Bsc Hons in Finance with Upper Second Class Honours. He holds a Masters degree in Accounting and Finance from University of Teesside, Middlesbrough, United Kingdom.",
+			"He is an Associate (ACS) of Chartered Institute of Stockbrokers, an Authorized Dealing Clerk of The Nigerian Stock Exchange (NSE) and an Associate Member of the prestigious Institute of Chartered Accountants of Nigeria (ICAN).",
+			"Mr. Are was part of the team that raised the N15B private placement Capital raise of TAK Agro Ltd and the N25B private placement Capital raise of Wema Bank."
 		],
 	},
 	{
@@ -87,11 +100,9 @@ export const boardMembersData: TeamMember[] = [
 		role: "Board Member",
 		image: opara,
 		bio: [
-			"Winifred is a highly motivated and dedicated individual with strong communication and interpersonal skills.",
-			"She is a graduate of Financial Management Technology from the Federal University of Technology, Owerri, and has received additional training in Human Resources and Health, Safety and Environment (HSE).",
-			"With over 5 years of professional experience, Winifred has worked as a Liaison Officer and Administrative Officer in a reputable corporate organization, gaining valuable skills that enable her to strategically align with organizational goals.",
-			"Currently serving as a Marketing Executive at Cloverdale Finance Company Ltd, she brings energy, strategic thinking, and teamwork to the company's marketing efforts.",
-			"Winifred is a valuable team member committed to driving Cloverdale to greater heights.",
+			"Ekenechukwu Njeze is a strategic and solutions-driven professional with interests that span innovative technology, real estate and sustainable development. With a background in Computer Science and Business from the prestigious University College Dublin (Ireland), he brings with him a unique mix of expertise and technical acumen.",
+			"Ekenechukwu’s track record speaks for itself, working in different sectors including pensions, ICT and real estate at establishments such Veritas Glanvills Pensions, Brugge Investments Ltd. He is well experienced and has also developed a solid foundation in business development and technical advisory given the different sectors he has worked in over the years. He is a maestro in bridging operational needs with strategic outcomes.",
+			"Ekenechukwu’s ability to deliver high-impact projects, drive the adoption of digital tools, and close complex deals makes him highly valuable in any business environment.",
 		],
 	},
 

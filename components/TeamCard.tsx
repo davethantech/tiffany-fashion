@@ -54,11 +54,18 @@ const TeamCard: React.FC<TeamCardProps> = ({
 						isExpanded ? "max-h-full" : "max-h-[80px]" // Use max-h-full for natural height when expanded
 					}`}
 				>
-					<p className='pr-2 text-justify'>
-						{isExpanded
-							? member.bio.join(" ")
-							: member.bio[0].slice(0, 120) + "..."}
-					</p>
+					{isExpanded ? (
+						member.bio.map((paragraph, idx) => (
+							<p key={idx} className="pr-2 text-justify mb-2 last:mb-0">
+								{paragraph}
+							</p>
+						))
+					) : (
+						<p className="pr-2 text-justify">
+							{member.bio[0].slice(0, 120) +
+								(member.bio[0].length > 120 ? "..." : "")}
+						</p>
+					)}
 				</div>
 				{/* Only show "Read More" if the bio is actually longer than the truncated version.
                     You might want to add a condition here to only show the button
