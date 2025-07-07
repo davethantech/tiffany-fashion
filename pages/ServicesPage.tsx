@@ -19,28 +19,28 @@ const servicesData: Service[] = [
 		icon: <CurrencyDollarIcon />,
 		title: "Consumer Loans",
 		description:
-			"Cloverdale offers credit facilities that allow clients leverage their cashflow for big-ticket purchases such as electronics, gadgets and equipment.",
+			"Cloverdale offers credit facilities that allow clients to leverage their cash flow for big-ticket purchases such as electronics, gadgets, and equipment.",
 		image: loanImage,
 		details: [
 			{
 				title: "Fixed Term Loans",
 				content:
-					"Short term facilities to meet financial obligations at competitive interest rates.",
+					"Short-term facilities to meet financial obligations at competitive interest rates.",
 			},
 			{
 				title: "Structured Facilities",
 				content:
-					"Bespoke credit facilities designed to meet unique cashflow and operational needs.",
+					"Bespoke credit facilities are designed to meet unique cash flow and operational needs.",
 			},
 			{
 				title: "Pay-Day Loans",
 				content:
-					"Credit facilities to enable salary earners leverage their cashflow to achieve more.",
+					"Credit facilities enable salary earners to leverage their cash flow to achieve more.",
 			},
 			{
 				title: "Proof of Funds",
 				content:
-					"Numerous institutions and agencies ask for proof of funds for purposes such as education, migration, and medical travel. We offer our clients the opportunity to utilize their investment status, credit history, and partnership with Cloverdale Finance Company Limited to satisfy the Proof of Fund criteria set by different agencies. The Cloverdale Finance Company proof of fund service provides flexibility to seize opportunities as they present themselves.",
+					"Numerous institutions and agencies ask for proof of funds for purposes such as education, migration, and medical travel. We offer our clients the opportunity to utilize their investment status, credit history, and partnership with Cloverdale Finance Company Limited to satisfy the Proof of Fund criteria set by different agencies. The Cloverdale Finance Company's proof of fund service provides flexibility to seize opportunities as they present themselves.",
 			},
 		],
 	},
@@ -60,17 +60,17 @@ const servicesData: Service[] = [
 			{
 				title: "Project Finance",
 				content:
-					"Structured facilities to enable MSMEs execute projects with clear cashflows & milestones.",
+					"Structured facilities to enable MSMEs to execute projects with clear cash flows & milestones.",
 			},
 			{
 				title: "Debt Structuring",
 				content:
-					"Restructure existing credit facilities to optimize cashflow.",
+					"Restructure existing credit facilities to optimize cash flow.",
 			},
 			{
 				title: "Local & International Trade Finance",
 				content:
-					"Trade finance facility to enable businesses harness viable opportunities without the constraint of funding.",
+					"Trade finance facility to enable businesses to harness viable opportunities without the constraint of funding.",
 			},
 			{
 				title: "Warehouse Finance Receipts",
@@ -84,7 +84,7 @@ const servicesData: Service[] = [
 		icon: <CogIcon />,
 		title: "Debt Services",
 		description:
-			"We offer value-added credit related solutions to businesses to manage debt exposures.",
+			"We offer value-added credit-related solutions to businesses to manage debt exposures.",
 		image: debtImage,
 		details: [
 			{
@@ -100,7 +100,7 @@ const servicesData: Service[] = [
 			{
 				title: "Debt Factoring",
 				content:
-					"Leverage receivables to unlock cashflow to meet business needs.",
+					"Leverage receivables to unlock cash flow to meet business needs.",
 			},
 		],
 	},
@@ -109,7 +109,7 @@ const servicesData: Service[] = [
 		icon: <ChartBarIcon />,
 		title: "Fund Management",
 		description:
-			"Our investment products provide flexible savings and investment options to enable individuals and businesses gain competitive returns on idle funds.",
+			"Our investment products provide flexible savings and investment options to enable individuals and businesses to gain competitive returns on idle funds.",
 		image: investmentImage,
 		details: [
 			{
@@ -134,7 +134,7 @@ const servicesData: Service[] = [
 		icon: <UsersIcon />,
 		title: "Financial Consultancy",
 		description:
-			"Our team offers financial consultancy to MSMEs to optimize cashflow and finance needs.",
+			"Our team offers financial consultancy to MSMEs to optimize cash flow and finance needs.",
 		image: consultancyImage,
 		details: [
 			{

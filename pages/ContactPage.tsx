@@ -73,7 +73,7 @@ const ContactPage: React.FC = () => {
 		<>
 			<PageHeader
 				title='Contact Us'
-				subtitle="We're here to help and answer any question you might have. We look forward to hearing from you."
+				subtitle="We're here to help and answer any questions you might have. We look forward to hearing from you"
 				imageSeed='contact-us-banner'
 				image={aboutImage}
 			/>
@@ -198,7 +198,8 @@ const ContactPage: React.FC = () => {
 							</div>
 						)}
 						<form
-							onSubmit={handleSubmit}
+							action="https://formspree.io/f/xyzjvyrd"
+							method="POST"
 							className='space-y-6'
 						>
 							<div>

@@ -88,20 +88,12 @@ const HomePage: React.FC = () => {
 						<p
 							className={`text-${COLORS.textSecondary} mb-4 leading-relaxed text-justify`}
 						>
-							Cloverdale Finance Company Limited is a
-							Central Bank of Nigeria (CBN) licensed Finance
-							Company focused on providing innovative
-							finance solutions to empower individual
-							consumers, industrial, commercial, or
-							agricultural enterprises.
+							Cloverdale Finance Company Limited is a Central Bank of Nigeria (CBN)- licensed Finance Company focused on providing innovative financial solutions to empower individual consumers, as well as industrial, commercial, and agricultural enterprises.
 						</p>
 						<p
 							className={`text-${COLORS.textSecondary} mb-6 leading-relaxed text-justify`}
 						>
-							We are dedicated to bridging the financial gap
-							and fostering economic growth by offering
-							accessible and transformative financial
-							services.
+							We are committed to bridging the financial gap and promoting economic growth by providing accessible and transformative financial services.
 						</p>
 						<Link
 							to='/about'
