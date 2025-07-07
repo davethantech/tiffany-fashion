@@ -18,13 +18,13 @@ const whyChooseUsData: WhyChooseUsPoint[] = [
 		icon: <CheckCircleIcon />,
 		title: "Regulatory Compliance",
 		description:
-			"Cloverdale is duly registered, licensed and in good standing with regulatory authorities. Your investments and financial activities are secure and compliant.",
+			"Cloverdale is duly registered, licensed, and in good standing with regulatory authorities. Your investments and financial activities are secure and compliant.",
 	},
 	{
 		icon: <CogIcon />,
 		title: "Risk Management",
 		description:
-			"We comply with ICT, Cybersecurity and Data Protection best practices, ensuring your data and assets are managed with utmost care and security.",
+			"We comply with ICT, Cybersecurity, and Data Protection best practices, ensuring your data and assets are managed with utmost care and security.",
 	},
 	{
 		icon: <UsersIcon />,
@@ -36,7 +36,7 @@ const whyChooseUsData: WhyChooseUsPoint[] = [
 		icon: <CollectionIcon />,
 		title: "Diverse Product Offering",
 		description:
-			"We offer a wide range of solutions across Saving, Investment and Credit, tailored to meet your unique financial needs and goals.",
+			"We offer a wide range of solutions across Saving, Investment, and Credit, tailored to meet your unique financial needs and goals.",
 	},
 	{
 		icon: <LightBulbIcon />,

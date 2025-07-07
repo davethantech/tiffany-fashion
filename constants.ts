@@ -18,7 +18,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'About Us', path: '/about' },
   { label: 'Our Leadership', path: '/leadership' },
   { label: 'Our Services', path: '/services' },
-  { label: 'Why Choose Us', path: '/why-choose-us' },
+  { label: 'Why Trust Us', path: '/why-choose-us' },
   { label: 'Contact Us', path: '/contact' },
 ];
 
@@ -36,7 +36,7 @@ export const COMPANY_INFO = {
 	address:
 		"Wing B, second floor, ULO Plaza, No. 34 Sokode Crescent, Wuse Zone 5, Abuja.",
 	vision:
-		"To be the trusted global leader in transformative financial services, dedicated to building a wealthier and more secured future for everyone.",
+		"To be the trusted global leader in transformative financial services, dedicated to building a wealthier and more secure future for everyone.",
 	mission:
 		"To deliver personalized financial solutions with transparency and innovation, empowering individuals and businesses to achieve lasting prosperity.",
 };
