@@ -73,7 +73,7 @@ const ContactPage: React.FC = () => {
 		<>
 			<PageHeader
 				title='Contact Us'
-				subtitle="We're here to help and answer any questions you might have. We look forward to hearing from you"
+				subtitle="We're here to help answer any question you might have. We look forward to hearing from you"
 				imageSeed='contact-us-banner'
 				image={aboutImage}
 			/>
