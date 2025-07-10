@@ -10,7 +10,7 @@ interface PageHeaderProps {
 
 const PageHeader: React.FC<PageHeaderProps> = ({
 	title,
-	subtitle,
+	subtitle={COMPANY_INFO.tagline},
 	imageSeed = "abstract",
 	image,
 }) => {
