@@ -36,7 +36,7 @@ const AboutPage: React.FC = () => {
 		<>
 			<PageHeader
 				title='About Cloverdale Finance'
-				subtitle='Your Surest Partner for a Wealthier Future.'
+				subtitle='Your surest partner to a wealthier future'
 				imageSeed='corporate-building'
 				image={investmentImage}
 			/>
