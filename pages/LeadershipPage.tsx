@@ -116,8 +116,7 @@ const LeadershipPage: React.FC = () => {
 					<p
 						className={`text-xs sm:text-base md:text-lg text-${COLORS.textSecondary} leading-relaxed text-justify`}
 					>
-						At Cloverdale Finance, our leadership is dedicated to upholding the highest standards of financial service, innovation, and integrity. We are committed to driving sustainable growth and creating lasting value for our clients, stakeholders, and the community. Our strategic direction is focused on navigating the complexities of the financial landscape to deliver solutions that empower and secure your financial future.
-					</p>
+						At Cloverdale Finance, our team is dedicated to upholding the highest standards of financial service, innovation, and integrity. We are committed to driving sustainable growth and creating lasting value for our clients, stakeholders, and the community. Our strategic direction is focused on navigating the complexities of the financial landscape to deliver solutions that empower and secure your financial future.					</p>
 				</div>
 			</SectionContainer>
 		</>
