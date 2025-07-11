@@ -17,20 +17,16 @@ const Footer: React.FC = () => {
 					{/* Column 1: Logo and About */}
 					{/* Column 1: Logo and About */}
 					<div>
-						<Link to='/' className='inline-block mb-3'>
-							<img
-								src={logo}
-								alt='Cloverdale Finance Logo'
-								className='h-10 w-auto'
-							/>
-						</Link>
-						{/* Add this block: Company Name and Tagline */}
-                                                <div className="mt-2">
-                                                    <p className={`text-sm text-${COLORS.brandAccentGreen}`}>
-                                                        {COMPANY_INFO.tagline}
-                                                    </p>
+						<div className="flex flex-col items-center md:items-start">
+                                                  <Link to='/' className='mb-4'>
+                                                    <img src={logo} alt='Cloverdale Finance Logo' className='h-10 w-auto' />
+                                                  </Link>
+
+                                                  <p className={`text-sm text-${COLORS.brandAccentGreen} mt-2 text-center md:text-left`}>
+                                                    {COMPANY_INFO.tagline}
+                                                  </p>
                                                 </div>
-					</div>
+					
 
 					{/* Column 2: Quick Links */}
 					<div>
