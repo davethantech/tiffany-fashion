@@ -24,7 +24,13 @@ const Footer: React.FC = () => {
 								className='h-10 w-auto'
 							/>
 						</Link>
-						
+						{/* Add this block: Company Name and Tagline */}
+                                                <div className="mt-2">
+                                                    <h2 className="text-white font-bold text-lg">{COMPANY_INFO.shortName}</h2>
+                                                    <p className={`text-sm text-${COLORS.brandAccentGreen}`}>
+                                                        {COMPANY_INFO.tagline}
+                                                    </p>
+                                                </div>
 					</div>
 
 					{/* Column 2: Quick Links */}
