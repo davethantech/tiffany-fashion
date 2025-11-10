@@ -19,12 +19,12 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Our Products', path: '/products' },
   { label: 'About Us', path: '/about' },
   { label: 'Contact Us', path: '/contact' },
-  { label: 'User', path: '/user' },
+  
   {
     label: "My Orders",
     path: "/orders",
-  }
-  
+  },
+  { label: 'User', path: '/user' } 
   
 ];
 

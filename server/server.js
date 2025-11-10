@@ -266,7 +266,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(4242, () => {
-  console.log("✅ Server running on https://tiffany-fashion-production.up.railway.app/");
+  console.log("✅ Server running on https://tiffany-fashion-production.up.railway.app");
   console.log("🌐 Webhook listening on /webhook");
   console.log("🧾 Orders API available at /orders");
 });
