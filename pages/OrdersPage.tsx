@@ -38,7 +38,7 @@ const OrdersPage: React.FC = () => {
 
       try {
         const response = await fetch(
-          "https://tiffany-fashion-production.up.railway.app//orders",
+          "https://tiffany-fashion-production.up.railway.app/orders",
           {
             headers: {
               Authorization: `Bearer ${token}`, // ✅ 带上 JWT token

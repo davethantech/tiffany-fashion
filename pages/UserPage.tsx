@@ -36,7 +36,7 @@ const UserPage: React.FC = () => {
 
     try {
       const res = await fetch(
-        "https://tiffany-fashion-production.up.railway.app//auth/signin",
+        "https://tiffany-fashion-production.up.railway.app/auth/signin",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -76,7 +76,7 @@ const UserPage: React.FC = () => {
 
     try {
       const res = await fetch(
-        "https://tiffany-fashion-production.up.railway.app//auth/signup",
+        "https://tiffany-fashion-production.up.railway.app/auth/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

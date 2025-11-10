@@ -28,7 +28,7 @@ const CartPage = () => {
 
       // ✅ 调用后端接口，携带 token
       const response = await fetch(
-        "https://tiffany-fashion-production.up.railway.app//create-checkout-session",
+        "https://tiffany-fashion-production.up.railway.app/create-checkout-session",
         {
           method: "POST",
           headers: {
