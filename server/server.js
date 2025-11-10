@@ -144,7 +144,7 @@ app.post("/create-checkout-session", async (req, res) => {
         product_data: {
           name: item.name,
           description: item.description,
-          images: [`http://localhost:5173${item.image}`],
+          images: [`https://tiffany-fashion-annie.vercel.app${item.image}`],
         },
         unit_amount: parseFloat(item.price.replace(/[£,]/g, "")) * 100,
       },
@@ -155,8 +155,8 @@ app.post("/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       mode: "payment",
       line_items,
-      success_url: "http://localhost:5173/#/success",
-      cancel_url: "http://localhost:5173/#/cart",
+      success_url: "https://tiffany-fashion-annie.vercel.app/#/success",
+      cancel_url: "https://tiffany-fashion-annie.vercel.app/#/cart",
       locale: "en",
     });
 
