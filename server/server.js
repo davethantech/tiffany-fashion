@@ -12,7 +12,7 @@ import { welcomeEmailTemplate } from "./welcomeEmail.js";
 import { orderSuccessEmailTemplate } from "./orderSuccessEmail.js";
 import { abandonedEmailTemplate } from "./abandonedEmail.js";
 
-dotenv.config({ path: ".env.local" });
+dotenv.config();
 
 const app = express();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
