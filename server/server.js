@@ -1,3 +1,4 @@
+import "./config.js";
 import { FRONTEND_URL, JWT_SECRET } from "./config.js";
 import express from "express";
 import Stripe from "stripe";
