@@ -26,18 +26,17 @@ const CartPage = () => {
       console.log("🛒 Step 1 - Starting checkout");
       console.log("🛒 Step 2 - Cart content:", cart);
 
+      const API = import.meta.env.VITE_API_BASE;
+
       // ✅ 调用后端接口，携带 token
-      const response = await fetch(
-        "https://tiffany-fashion-production.up.railway.app/create-checkout-session",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`, // ✅ 传入登录 token
-          },
-          body: JSON.stringify({ cart }),
-        }
-      );
+      const response = await fetch(`${API}/create-checkout-session`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`, // ✅ 传入登录 token
+        },
+        body: JSON.stringify({ cart }),
+      });
 
       console.log("📦 Step 3 - Got response:", response);
 

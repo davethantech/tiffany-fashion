@@ -1,3 +1,4 @@
+import { FRONTEND_URL, JWT_SECRET } from "./config.js";
 import express from "express";
 import Stripe from "stripe";
 import cors from "cors";
@@ -6,6 +7,10 @@ import mysql from "mysql2";
 import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { sendEmail } from "./sendEmail.js";
+import { welcomeEmailTemplate } from "./welcomeEmail.js";
+import { orderSuccessEmailTemplate } from "./orderSuccessEmail.js";
+import { abandonedEmailTemplate } from "./abandonedEmail.js";
 
 dotenv.config({ path: ".env.local" });
 
@@ -71,7 +76,14 @@ app.post("/auth/signup", async (req, res) => {
         [firstName, lastName, email, hash],
         (err2, result) => {
           if (err2) return res.status(500).json({ error: "DB insert error" });
+          sendEmail({
+            to: email,
+            subject: "🎉 Welcome to Tiffany Fashion Annie",
+            html: welcomeEmailTemplate(firstName),
+          });
+        
           return res.json({ ok: true, userId: result.insertId });
+          
         }
       );
     });
@@ -112,6 +124,8 @@ app.post("/auth/signin", (req, res) => {
         email: user.email,
       },
     });
+
+
   });
 });
 
@@ -143,7 +157,8 @@ app.post("/create-checkout-session", async (req, res) => {
         product_data: {
           name: item.name,
           description: item.description,
-          images: [`https://tiffany-fashion-annie.vercel.app${item.image}`],
+          images: [`${FRONTEND_URL}${item.image}`],
+
         },
         unit_amount: parseFloat(item.price.replace(/[£,]/g, "")) * 100,
       },
@@ -154,10 +169,11 @@ app.post("/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       mode: "payment",
       line_items,
-      success_url: "https://tiffany-fashion-annie.vercel.app/#/success",
-      cancel_url: "https://tiffany-fashion-annie.vercel.app/#/cart",
+      success_url: `${FRONTEND_URL}/#/success`,
+      cancel_url: `${FRONTEND_URL}/#/cart`,
       locale: "en",
     });
+    
 
     // ✅ 从 token 获取登录用户邮箱
     const authHeader = req.headers.authorization;
@@ -227,16 +243,76 @@ app.post(
 
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
+
+      // Stripe 付款人邮箱（不再使用作为收件人）
       const paymentEmail = session.customer_details?.email || "unknown@example.com";
 
+      // 1️⃣ 查询订单
       db.query(
-        `UPDATE orders 
-         SET status = ?, customer_email = ?, created_at = CURRENT_TIMESTAMP
-         WHERE order_id = ?`,
-        ["paid", paymentEmail, session.id],
-        (err) => {
-          if (err) console.error("❌ MySQL update error:", err);
-          else console.log(`💰 Order ${session.id} marked as PAID (paymentEmail: ${paymentEmail})`);
+        "SELECT * FROM orders WHERE order_id = ?",
+        [session.id],
+        (err, results) => {
+          if (err) {
+            console.error("❌ Failed to load order", err);
+            return;
+          }
+
+          if (results.length === 0) {
+            console.error("❌ Order not found for webhook:", session.id);
+            return;
+          }
+
+          const order = results[0];
+
+          // 🚀 正确的收件人：当前登录用户（不是 Stripe 付款邮箱）
+          const websiteUserEmail = order.user_email;
+
+          let items = [];
+
+          try {
+            if (Array.isArray(order.items)) {
+              // MySQL JSON 字段通过 mysql2 返回的情况：已经是数组
+              items = order.items;
+            } else if (typeof order.items === "string" && order.items.trim()) {
+              // 老数据 / 某些环境下返回字符串，再做一次 JSON.parse
+              items = JSON.parse(order.items);
+            } else {
+              items = [];
+            }
+          } catch (e) {
+            console.error("❌ items JSON parse error, raw value:", order.items);
+            items = [];
+          }
+                // 3️⃣ ⭐ 在这里修复图片路径 ⭐
+      const IMAGE_BASE = process.env.FRONTEND_URL; // 来自 .env.local
+
+      items = items.map((item) => ({
+        ...item,
+        image: item.image.startsWith("http")
+          ? item.image
+          : `${IMAGE_BASE}${item.image}`,
+      }));
+
+          
+
+
+          // 3️⃣ 更新订单状态
+          db.query(
+            `UPDATE orders 
+             SET status = 'paid', customer_email = ?
+             WHERE order_id = ?`,
+            [paymentEmail, session.id]
+          );
+
+          // 4️⃣ 发送邮件给网站用户，而不是付款人！
+          sendEmail({
+            to: websiteUserEmail,
+            subject: "🧾 Your Tiffany Fashion Annie Order Confirmation",
+            html: orderSuccessEmailTemplate(order, items),
+          });
+
+          console.log(`💰 Order ${session.id} fully processed`);
+          console.log(`📧 Email sent to website user: ${websiteUserEmail}`);
         }
       );
     }
@@ -244,6 +320,7 @@ app.post(
     res.sendStatus(200);
   }
 );
+
 
 // ✅ 获取当前登录用户订单
 app.get("/orders", authenticateToken, (req, res) => {
@@ -265,8 +342,31 @@ app.get("/", (req, res) => {
   res.send("✅ Tiffany Store backend is running!");
 });
 
-app.listen(4242, () => {
-  console.log("✅ Server running on https://tiffany-fashion-production.up.railway.app");
+const PORT = process.env.PORT || 4242;
+
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+  console.log(`🌱 NODE_ENV: ${process.env.NODE_ENV}`);
+console.log(`🌐 FRONTEND_URL: ${FRONTEND_URL}`);
   console.log("🌐 Webhook listening on /webhook");
   console.log("🧾 Orders API available at /orders");
 });
+
+
+app.get("/cron/abandoned-orders", async (req, res) => {
+  db.query(
+    `SELECT * FROM orders WHERE status='unpaid' AND created_at < NOW() - INTERVAL 1 MINUTE`,
+    (err, results) => {
+      results.forEach(order => {
+        sendEmail({
+          to: order.user_email,
+          subject: "⏰ Complete your order at Tiffany Fashion Annie",
+          html: abandonedEmailTemplate(order.checkout_url, JSON.parse(order.items)),
+        });
+      });
+
+      res.json({ count: results.length });
+    }
+  );
+});
+
