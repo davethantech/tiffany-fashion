@@ -1,10 +1,10 @@
-import { FRONTEND_URL, JWT_SECRET } from "./config.js";
+import "./config.js";
 import express from "express";
 import Stripe from "stripe";
 import cors from "cors";
 import bodyParser from "body-parser";
 import mysql from "mysql2";
-import dotenv from "dotenv";
+
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { sendEmail } from "./sendEmail.js";
@@ -12,7 +12,6 @@ import { welcomeEmailTemplate } from "./welcomeEmail.js";
 import { orderSuccessEmailTemplate } from "./orderSuccessEmail.js";
 import { abandonedEmailTemplate } from "./abandonedEmail.js";
 
-dotenv.config();
 
 const app = express();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {

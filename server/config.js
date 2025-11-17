@@ -1,5 +1,13 @@
 import dotenv from "dotenv";
-dotenv.config({ path: ".env.local" });
+
+// 本地开发优先加载 .env.local
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config({ path: ".env.local" });
+} else {
+  // Railway 等线上自动从环境变量加载
+  dotenv.config();
+}
+
 
 export const IS_PROD = process.env.NODE_ENV === "production";
 
