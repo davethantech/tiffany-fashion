@@ -83,7 +83,7 @@ Expected output:
 
 ```
 VITE v6.4.1  ready in 1848 ms
-➜  Local:   http://localhost:5173/
+➜  Local:   https://tiffany-fashion-annie.vercel.app/
 ```
 
 Then open **https://tiffany-fashion-annie.vercel.app/** in your browser 🎉

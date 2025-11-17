@@ -1,33 +1,40 @@
-import "./config.js";
 import { FRONTEND_URL, JWT_SECRET } from "./config.js";
 import express from "express";
 import Stripe from "stripe";
 import cors from "cors";
 import bodyParser from "body-parser";
 import mysql from "mysql2";
-
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+
 import { sendEmail } from "./sendEmail.js";
 import { welcomeEmailTemplate } from "./welcomeEmail.js";
 import { orderSuccessEmailTemplate } from "./orderSuccessEmail.js";
 import { abandonedEmailTemplate } from "./abandonedEmail.js";
 
-
 const app = express();
+
+// ⭐ Stripe 初始化
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   apiVersion: "2022-11-15",
 });
 
+// ⭐ CORS 放最前面（必须）
+app.use(
+  cors({
+    origin: FRONTEND_URL, // 已从 config.js 拿到
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
-// 在所有路由前面
+// ⭐ 日志中间件
 app.use((req, res, next) => {
-  console.log("📨 Incoming request:", req.method, req.url);
+  console.log(`📨 ${req.method} ${req.url}`);
   next();
 });
 
-
-// ✅ 排除 webhook 的 bodyParser 影响
+// ⭐ bodyParser - 但排除 Webhook
 app.use((req, res, next) => {
   if (req.originalUrl === "/webhook") {
     next();
@@ -36,7 +43,6 @@ app.use((req, res, next) => {
   }
 });
 
-app.use(cors());
 
 // ⚙️ MySQL 连接池
 const db = mysql.createPool({
