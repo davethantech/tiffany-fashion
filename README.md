@@ -1,4 +1,4 @@
-# 💎 Tiffany Fashion Website
+# 💎 Antiffiny Fashion Website
 
 A full-stack **fashion e-commerce demo** built with **React + TypeScript (Vite frontend)** and **Node.js + Express (backend)**.  
 Includes **Stripe** integration for payment processing and a **MySQL** database for product and order management.
@@ -19,8 +19,8 @@ Includes **Stripe** integration for payment processing and a **MySQL** database 
 ### **1️⃣ Clone and install dependencies**
 
 ```bash
-git clone https://github.com/your-company/tiffany-fashion.git
-cd Tiffany
+git clone https://github.com/your-company/antiffany-fashion.git
+cd Antiffiny
 npm install
 ```
 
@@ -66,7 +66,7 @@ Expected output:
 
 ```
 [dotenv@17.2.3] injecting env (8) from .env.local
-✅ Server running on https://tiffany-fashion-production.up.railway.app/
+✅ Server running on https://antiffany-fashion-production.up.railway.app/
 ```
 
 ---
@@ -83,10 +83,10 @@ Expected output:
 
 ```
 VITE v6.4.1  ready in 1848 ms
-➜  Local:   https://tiffany-fashion-annie.vercel.app/
+➜  Local:   https://antiffany-fashion-annie.vercel.app/
 ```
 
-Then open **https://tiffany-fashion-annie.vercel.app/** in your browser 🎉
+Then open **https://antiffany-fashion-annie.vercel.app/** in your browser 🎉
 
 ---
 
@@ -110,8 +110,8 @@ Expected output:
 
 ## 🧠 Notes
 
-- Backend runs on **https://tiffany-fashion-production.up.railway.app/**
-- Frontend runs on **https://tiffany-fashion-annie.vercel.app/**
+- Backend runs on **https://antiffany-fashion-production.up.railway.app/**
+- Frontend runs on **https://antiffany-fashion-annie.vercel.app/**
 - Keep `.env.local` private — it contains your keys and database credentials.
 - Deploy the production build to your VPS (e.g. **https://fashion.davethan.tech**) once tested locally.
 
@@ -134,7 +134,7 @@ Expected output:
 After pushing to your private GitHub repo, SSH into your VPS:
 
 ```bash
-git clone https://github.com/your-company/tiffany-fashion.git
+git clone https://github.com/your-company/antiffany-fashion.git
 cd tiffany-fashion
 npm install
 cd server && npm install

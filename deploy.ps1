@@ -1,5 +1,5 @@
 # ===============================================
-# 🚀 Smart Git Deploy Script for Tiffany Project
+# 🚀 Smart Git Deploy Script for Antiffiny Project
 # Author: Davethan Tech
 # ===============================================
 
@@ -40,7 +40,7 @@ git commit -m "$Message"
 $remoteUrl = git remote get-url origin 2>$null
 if (-not $remoteUrl) {
     Write-Host "⚙️ 未设置远程仓库，正在添加..." -ForegroundColor Yellow
-    git remote add origin "https://github.com/davethantech/tiffany-fashion.git"
+    git remote add origin "https://github.com/davethantech/antiffiny-fashion.git"
 }
 
 # 6️⃣ 从远程同步
@@ -61,7 +61,7 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "✅ 推送成功！代码已同步到 GitHub。" -ForegroundColor Green
     
     # 自动打开 GitHub 仓库页面
-    $repoUrl = "https://github.com/davethantech/tiffany-fashion"
+    $repoUrl = "https://github.com/davethantech/antiffiny-fashion"
     Write-Host "🌐 正在打开 GitHub 仓库页面..." -ForegroundColor Cyan
     Start-Process $repoUrl
 } else {

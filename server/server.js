@@ -11,7 +11,7 @@ import { sendEmail } from "./sendEmail.js";
 import { welcomeEmailTemplate } from "./welcomeEmail.js";
 import { orderSuccessEmailTemplate } from "./orderSuccessEmail.js";
 import { abandonedEmailTemplate } from "./abandonedEmail.js";
-
+import fetch from "node-fetch"; // 如果已经有则不用重复导入
 const app = express();
 
 // ⭐ Stripe 初始化
@@ -20,13 +20,27 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 });
 
 // ⭐ CORS 放最前面
+const allowedOrigins = [
+  process.env.FRONTEND_URL,                // 主站（生产）
+  "https://antiffany-fashion-annie.vercel.app", // Vercel 域名
+  "http://localhost:5173",                 // 本地开发
+];
+
 app.use(
   cors({
-    origin: FRONTEND_URL,
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS: " + origin));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
+
+
 
 // ⭐ 日志输出
 app.use((req, res, next) => {
@@ -96,7 +110,7 @@ app.post("/auth/signup", async (req, res) => {
         // 发送欢迎邮件
         sendEmail({
           to: email,
-          subject: "🎉 Welcome to Tiffany Fashion Annie",
+          subject: "🎉 Welcome to Antiffiny Fashion",
           html: welcomeEmailTemplate(firstName),
         });
 
@@ -322,7 +336,7 @@ app.post(
           // 4️⃣ 发送邮件给网站用户，而不是付款人！
           sendEmail({
             to: websiteUserEmail,
-            subject: "🧾 Your Tiffany Fashion Annie Order Confirmation",
+            subject: "🧾 Your Antiffiny Fashion Order Confirmation",
             html: orderSuccessEmailTemplate(order, items),
           });
 
@@ -374,7 +388,7 @@ app.get("/orders", authenticateToken, (req, res) => {
 // Home
 // ------------------------
 app.get("/", (req, res) => {
-  res.send("✅ Tiffany Store backend is running!");
+  res.send("✅ Antiffiny Store backend is running!");
 });
 
 // ------------------------
@@ -416,7 +430,7 @@ app.get("/cron/abandoned-orders", (req, res) => {
 
         sendEmail({
           to: order.user_email,
-          subject: "⏰ Complete your order at Tiffany Fashion Annie",
+          subject: "⏰ Complete your order at Antiffiny Fashion",
           html: abandonedEmailTemplate(order.checkout_url, items),
         });
 
@@ -459,7 +473,7 @@ app.get("/cron/cleanup-unpaid", (req, res) => {
 });
 
 
-import fetch from "node-fetch"; // 如果已经有则不用重复导入
+
 
 // ⭐ 统一触发所有 cron 任务
 app.get("/cron/run-all", async (req, res) => {
@@ -486,6 +500,16 @@ app.get("/cron/run-all", async (req, res) => {
   } catch (err) {
     console.error("❌ CRON run-all error:", err);
     res.status(500).json({ error: "Cron failed", details: err.message });
+  }
+});
+
+app.get("/api/onsleek", async (req, res) => {
+  try {
+    const result = await fetch("https://api.onsleek.ai/v1/allowlist-websites");
+    const data = await result.json();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: "onsleek API failed" });
   }
 });
 

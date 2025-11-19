@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
           className="text-4xl md:text-6xl font-bold text-white mb-6"
         >
           <span className="bg-gradient-to-r from-[#81D8D0] to-[#5DC1B9] bg-clip-text text-transparent">
-            Tiffany
+            Antiffiny
           </span>{" "}
           Timeless Design
         </motion.h1>

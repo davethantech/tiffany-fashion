@@ -20,7 +20,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ onClose }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       from: "bot",
-      text: `Welcome to Tiffany & Co.’s Digital Concierge 💎\n\nI'm your personal assistant. How may I help you today?`,
+      text: `Welcome to Antiffiny & Co.’s Digital Concierge 💎\n\nI'm your personal assistant. How may I help you today?`,
     },
   ]);
   const [inputValue, setInputValue] = useState("");
@@ -48,7 +48,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ onClose }) => {
           {
             role: "system",
             content:
-              "You are a polite, elegant digital concierge for Tiffany & Co. Respond concisely in the tone of a luxury brand assistant.",
+              "You are a polite, elegant digital concierge for Antiffiny & Co. Respond concisely in the tone of a luxury brand assistant.",
           },
           ...messages.map((m) => ({
             role: m.from === "user" ? "user" : "assistant",
