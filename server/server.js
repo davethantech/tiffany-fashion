@@ -22,7 +22,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 // ⭐ CORS 放最前面
 const allowedOrigins = [
   process.env.FRONTEND_URL,                // 主站（生产）
-  "https://antiffany-fashion-annie.vercel.app", // Vercel 域名
+  "https://tiffany-fashion-annie.vercel.app", // Vercel 域名
   "http://localhost:5173",                 // 本地开发
 ];
 
