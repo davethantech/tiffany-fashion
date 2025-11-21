@@ -30,20 +30,24 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: function (origin, callback) {
+      // allow server-to-server, cron, webhook
       if (!origin) return callback(null, true);
 
+      // allow exact matches
       if (allowedOrigins.includes(origin)) return callback(null, true);
 
-      // ⭐ allow this backend itself (railway origin)
-      if (origin.includes(".railway.app")) return callback(null, true);
+      // allow any *.railway.app
+      if (typeof origin === "string" && origin.includes(".railway.app")) {
+        return callback(null, true);
+      }
 
       console.log("❌ CORS blocked:", origin);
       return callback(new Error("Not allowed by CORS: " + origin));
     },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
+
 
 
 // ⭐ 必须加入 OPTIONS 处理（否则 Railway 会 502）
