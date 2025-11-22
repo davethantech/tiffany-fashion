@@ -490,7 +490,7 @@ app.get("/api/onsleek", async (req, res) => {
 // 启动服务器
 // ------------------------
 const PORT = process.env.PORT || 4242;
-app.listen(PORT, () => { 
+app.listen(PORT, "0.0.0.0", () => { 
   console.log(`✅ Server running on port ${PORT}`); 
   console.log(`🌱 NODE_ENV: ${process.env.NODE_ENV}`); 
   console.log(`🌐 FRONTEND_URL: ${FRONTEND_URL}`); 
